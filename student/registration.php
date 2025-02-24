@@ -1,4 +1,5 @@
 <?php
+global $link;
 include "connection.php";
 ?>
 <!DOCTYPE html>
@@ -60,7 +61,8 @@ include "connection.php";
                         <input type="text" class="form-control" placeholder="Enrollment No" name="enrollmentno" required=""/>
                     </div>
                     <div class="col-lg-12  col-lg-push-3">
-                        <input class="btn btn-default submit " type="submit" name="submit1" value="Register">
+                        <input class="btn btn-primary" type="submit" name="submit1" value="Register">
+                        <a href="login.php"> Sign in </a>
                     </div>
 
                 </form>
@@ -71,20 +73,16 @@ include "connection.php";
         if (isset($_POST["submit1"]))
         {
 
-            mysqli_query($link,"insert into student_registration (firstname, lastname, username, password, email, contact, sem, enrollment, status) values('$_POST[firstname]','$_POST[lastname]','$_POST[username]','$_POST[password]','$_POST[email]','$_POST[contact]','$_POST[sem]','$_POST[enrollmentno]','no')");
+            mysqli_query($link,"insert into student_registration (firstname, lastname, username, password, email, contact, sem, enrollment, status) values('$_POST[firstname]','$_POST[lastname]','$_POST[username]','$_POST[password]','$_POST[email]','$_POST[contact]','$_POST[sem]','$_POST[enrollment]','no')");
 
         ?>
         <div class="alert alert-success col-lg-12 col-lg-push-0">
-            Registration successfully, You will get email when your account is approved
+            Registration successfully. You will get email when your account is approved
         </div>
 
         <?php
         }
         ?>
-
-
     </div>
-
-
 </body>
 </html>

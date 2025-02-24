@@ -1,3 +1,11 @@
+<?php
+session_start();
+include "connection.php";
+global $link;
+$res=mysqli_query($link,"select * from messages where dusername='$_SESSION[student]' && seen='n'");
+$total=mysqli_num_rows($res);
+$_SESSION['total']=$total;
+?>
 <!DOCTYPE html >
 <html lang = "en" >
 <head >
@@ -30,7 +38,7 @@
                <!-- menu profile quick info-->
                 <div class="profile clearfix" >
                     <div class="profile_pic" >
-                        <img src = "images/img.jpg" alt = "..." class="img-circle profile_img" >
+                        <img src = "images/user.png" alt = "..." class="img-circle profile_img" >
                     </div >
                     <div class="profile_info" >
                         <span > Welcome,</span >
@@ -85,7 +93,7 @@
                         <li class="" >
                             <a href = "javascript;" class="user-profile dropdown-toggle" data - toggle = "dropdown"
                                aria - expanded = "false" >
-                                <img src = "images/img.jpg" alt = "" > John Doe <span class=" fa fa-angle-down"></span>
+                                <img src = "images/user.png" alt = "" > John Doe <span class=" fa fa-angle-down"></span>
                             </a >
                             <ul class="dropdown-menu dropdown-usermenu pull-right" >
                                 <li ><a href = "login.html" ><i class="fa fa-sign-out pull-right" ></i > Log Out </a ></li >
@@ -93,10 +101,10 @@
                         </li >
 
                         <li role = "presentation" class="dropdown" >
-                            <a href = "javascript;" class="dropdown-toggle info-number" data - toggle = "dropdown"
+                            <a href = "message_from_librarian.php" class="dropdown-toggle info-number" data - toggle = "dropdown"
                                aria - expanded = "false" >
                                 <i class="fa fa-envelope-o" ></i >
-                                <span class="badge bg-green" > 6</span>
+                                <span class="badge bg-green" > <?php echo $total;?></span>
                             </a >
 
                         </li >

@@ -30,7 +30,7 @@
                <!-- menu profile quick info-->
                 <div class="profile clearfix" >
                     <div class="profile_pic" >
-                        <img src = "images/img.jpg" alt = "..." class="img-circle profile_img" >
+                        <img src = "images/user.png" alt = "..." class="img-circle profile_img" >
                     </div >
                     <div class="profile_info" >
                         <span > Welcome,</span >
@@ -48,20 +48,23 @@
                     <div class="menu_section" >
                         <h3 > General</h3 >
                         <ul class="nav side-menu" >
-                            <li ><a ><i class="fa fa-home" ></i > Home <span class="fa fa-chevron-down" ></span></a >
+                            <li ><a href="display_student_info.php"><i class="fa fa-home" ></i > All Student Info <span class="fa fa-chevron-down" ></span></a >
 
                             </li >
-                            <li ><a ><i class="fa fa-edit" ></i > Forms <span class="fa fa-chevron-down" ></span></a >
+                            <li ><a href="add_books.php"><i class="fa fa-edit" ></i > Add books <span class="fa fa-chevron-down" ></span></a >
 
                             </li >
-                            <li ><a ><i class="fa fa-desktop" ></i > UI Elements <span class="fa fa-chevron-down" ></span></a >
+                            <li ><a href="display_books.php"><i class="fa fa-desktop" ></i > Display books <span class="fa fa-chevron-down" ></span></a >
 
                             </li >
-                            <li ><a ><i class="fa fa-table" ></i > Tables <span class="fa fa-chevron-down" ></span></a >
-
+                            <li ><a href="issue_books.php"><i class="fa fa-table" ></i > Issue books <span class="fa fa-chevron-down" ></span></a >
                             </li >
-                            <li ><a ><i class="fa fa-bar-chart-o" ></i > Data Presentation <span class="fa fa-chevron-down" ></span></a >
-
+                            </li >
+                            <li ><a href="return_book.php"><i class="fa fa-table" ></i > Return books <span class="fa fa-chevron-down" ></span></a >
+                            </li >
+                            <li ><a ><i class="fa fa-bar-chart-o" ></i > Books With All Info <span class="fa fa-chevron-down" ></span></a >
+                            </li >
+                            <li ><a href="send_notification_student.php"><i class="fa fa-mail-forward" ></i > Send Message To Student <span class="fa fa-chevron-down" ></span></a >
                             </li >
 
                         </ul >
@@ -85,7 +88,7 @@
                         <li class="" >
                             <a href = "javascript;" class="user-profile dropdown-toggle" data - toggle = "dropdown"
                                aria - expanded = "false" >
-                                <img src = "images/img.jpg" alt = "" > John Doe <span class=" fa fa-angle-down"></span>
+                                <img src = "images/user.png" alt = "" > John Doe <span class=" fa fa-angle-down"></span>
                             </a >
                             <ul class="dropdown-menu dropdown-usermenu pull-right" >
                                 <li ><a href = "login.html" ><i class="fa fa-sign-out pull-right" ></i > Log Out </a ></li >

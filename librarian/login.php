@@ -1,4 +1,5 @@
 <?php
+session_start();
 global $link;
 include "connection.php";
 ?>
@@ -43,8 +44,7 @@ include "connection.php";
                 <input type="password" name="password" class="form-control" placeholder="Password" required="">
             </div>
             <div>
-
-                <input class="btn btn-default submit" type="submit" name="submit1" value="Login">
+                <input class="btn btn-primary" type="submit" name="submit1" value="Login">
                 <a class="reset_pass" href="#">Lost your password?</a>
             </div>
 
@@ -54,16 +54,11 @@ include "connection.php";
                 <p class="change_link">New to site?
                     <a href="registration.html"> Create Account </a>
                 </p>
-
                 <div class="clearfix"></div>
                 <br/>
-
-
             </div>
         </form>
     </section>
-
-
 </div>
 
 <?php
@@ -85,6 +80,7 @@ if (isset($_POST["submit1"]))
     }
     else
     {
+        $_SESSION["librarian"]=$_POST["username"];
        ?>
         <script type="text/javascript">
 

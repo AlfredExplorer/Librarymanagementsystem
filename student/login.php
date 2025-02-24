@@ -1,4 +1,5 @@
 <?php
+session_start();
 include "connection.php";
 $link = mysqli_connect("localhost", "root", "mizizi@2", "lms");
 ?>
@@ -52,13 +53,11 @@ $link = mysqli_connect("localhost", "root", "mizizi@2", "lms");
 
             <div class="separator">
                 <p class="change_link">New to site?
-                    <a href="registration.html"> Create Account </a>
+                    <a href="registration.php"> Create Account </a>
                 </p>
 
                 <div class="clearfix"></div>
                 <br/>
-
-
             </div>
         </form>
     </section>
@@ -82,11 +81,12 @@ if (isset($_POST["submit1"]))
     }
     else
     {
+        $_SESSION["student"]=$_POST["username"];
         ?>
-<script type="text/javascript">
+        <script type="text/javascript">
 
-    header("location:student_home.php");
-</script>
+            window.location.href = "my_issued_books.php";
+        </script>
 <?php
 
     }
